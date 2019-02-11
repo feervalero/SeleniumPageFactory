@@ -1,5 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SeleniumPageFactory;
+﻿using KitchenAid;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace TestCases
 {

@@ -1,6 +1,7 @@
+using System.Collections.Generic;
 using System.IO;
+using KitchenAid;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using SeleniumPageFactory;
 using TestCases;
 
 namespace KitchenAidTests
@@ -11,7 +12,7 @@ namespace KitchenAidTests
         [TestMethod]
         public void SearchAndValidate()
         {
-            string[] items = {
+            /*string[] items = {
                 "KOWT100ESS",
                 "KVIB606DSS",
                 "KDTM354ESS",
@@ -37,8 +38,10 @@ namespace KitchenAidTests
                 "KCDS075T",
                 "KUIX505ESS",
                 "KUBR304ESS",
-                "KUWR304ESS"*/
+                "KUWR304ESS"
             };
+            */
+            IList<string> items = DataBase.GetProducts();
 
             foreach (string item in items)
             {

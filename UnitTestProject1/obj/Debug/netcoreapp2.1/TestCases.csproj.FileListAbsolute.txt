@@ -10,7 +10,6 @@ C:\Users\valerf2\source\repos\SeleniumPageFactory\UnitTestProject1\bin\Debug\net
 C:\Users\valerf2\source\repos\SeleniumPageFactory\UnitTestProject1\bin\Debug\netcoreapp2.1\TestCases.dll
 C:\Users\valerf2\source\repos\SeleniumPageFactory\UnitTestProject1\bin\Debug\netcoreapp2.1\TestCases.pdb
 C:\Users\valerf2\source\repos\SeleniumPageFactory\UnitTestProject1\bin\Debug\netcoreapp2.1\EntityFramework.dll
-C:\Users\valerf2\source\repos\SeleniumPageFactory\UnitTestProject1\bin\Debug\netcoreapp2.1\SeleniumPageFactory.dll
 C:\Users\valerf2\source\repos\SeleniumPageFactory\UnitTestProject1\bin\Debug\netcoreapp2.1\System.Web.Http.dll
 C:\Users\valerf2\source\repos\SeleniumPageFactory\UnitTestProject1\bin\Debug\netcoreapp2.1\System.Web.Http.OData.dll
 C:\Users\valerf2\source\repos\SeleniumPageFactory\UnitTestProject1\bin\Debug\netcoreapp2.1\System.Web.Http.WebHost.dll
@@ -18,7 +17,6 @@ C:\Users\valerf2\source\repos\SeleniumPageFactory\UnitTestProject1\bin\Debug\net
 C:\Users\valerf2\source\repos\SeleniumPageFactory\UnitTestProject1\bin\Debug\netcoreapp2.1\Microsoft.Data.Edm.dll
 C:\Users\valerf2\source\repos\SeleniumPageFactory\UnitTestProject1\bin\Debug\netcoreapp2.1\Microsoft.Data.OData.dll
 C:\Users\valerf2\source\repos\SeleniumPageFactory\UnitTestProject1\bin\Debug\netcoreapp2.1\System.Spatial.dll
-C:\Users\valerf2\source\repos\SeleniumPageFactory\UnitTestProject1\bin\Debug\netcoreapp2.1\SeleniumPageFactory.pdb
 C:\Users\valerf2\source\repos\SeleniumPageFactory\UnitTestProject1\bin\Debug\netcoreapp2.1\EntityFramework.pdb
 C:\Users\valerf2\source\repos\SeleniumPageFactory\UnitTestProject1\bin\Debug\netcoreapp2.1\EntityFramework.xml
 C:\Users\valerf2\source\repos\SeleniumPageFactory\UnitTestProject1\bin\Debug\netcoreapp2.1\EntityFramework.dll.config
@@ -60,3 +58,5 @@ C:\Users\valerf2\source\repos\SeleniumPageFactory\UnitTestProject1\obj\Debug\net
 C:\Users\valerf2\source\repos\SeleniumPageFactory\UnitTestProject1\obj\Debug\netcoreapp2.1\TestCases.csproj.CopyComplete
 C:\Users\valerf2\source\repos\SeleniumPageFactory\UnitTestProject1\obj\Debug\netcoreapp2.1\TestCases.dll
 C:\Users\valerf2\source\repos\SeleniumPageFactory\UnitTestProject1\obj\Debug\netcoreapp2.1\TestCases.pdb
+C:\Users\valerf2\source\repos\SeleniumPageFactory\UnitTestProject1\bin\Debug\netcoreapp2.1\KitchenAid.dll
+C:\Users\valerf2\source\repos\SeleniumPageFactory\UnitTestProject1\bin\Debug\netcoreapp2.1\KitchenAid.pdb

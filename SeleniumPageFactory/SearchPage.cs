@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Numerics;
-using System.Runtime.CompilerServices;
-using System.Text;
 using System.Threading;
 using OpenQA.Selenium;
 
-namespace SeleniumPageFactory
+namespace KitchenAid
 {
     public static class SearchPage
     {

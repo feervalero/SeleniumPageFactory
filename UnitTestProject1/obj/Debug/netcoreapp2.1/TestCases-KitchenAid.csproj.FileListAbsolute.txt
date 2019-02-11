@@ -1,0 +1,4 @@
+C:\Users\valerf2\source\repos\SeleniumPageFactory\UnitTestProject1\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\valerf2\source\repos\SeleniumPageFactory\UnitTestProject1\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\valerf2\source\repos\SeleniumPageFactory\UnitTestProject1\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\valerf2\source\repos\SeleniumPageFactory\UnitTestProject1\bin\Debug\netcoreapp2.1\TestCases-KitchenAid.dll

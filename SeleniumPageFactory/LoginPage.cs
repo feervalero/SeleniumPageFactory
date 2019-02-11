@@ -1,9 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Text;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Support.Events;
+﻿using OpenQA.Selenium;
 
-namespace SeleniumPageFactory
+namespace KitchenAid
 {
     public class LoginPage
     {

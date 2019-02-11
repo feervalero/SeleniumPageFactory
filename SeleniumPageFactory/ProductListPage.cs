@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 using OpenQA.Selenium;
 
-namespace SeleniumPageFactory
+namespace KitchenAid
 {
     public class ProductListPage
     {

@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
-using System.Text;
 
-namespace SeleniumPageFactory
+namespace KitchenAid
 {
     public static class DataBase
     {
@@ -41,6 +40,34 @@ namespace SeleniumPageFactory
             }
         }
 
+        public static IList<string> GetProducts()
+        {
+            IList<string> datos = new List<string>();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string command = "SELECT ModelNumber FROM SKU";
+                SqlCommand insertCommand = new SqlCommand(command, connection);
+
+                using (SqlDataReader result = insertCommand.ExecuteReader())
+                {
+                    
+                    while (result.Read())
+                    {
+                        datos.Add(result[0].ToString());
+                    }
+                }
+                
+
+                connection.Close();
+                connection.Dispose();
+
+                return datos;
+            }
+        }
+
         internal static void ExecuteNonQueryCommand(string command)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -55,6 +82,31 @@ namespace SeleniumPageFactory
             }
         }
 
+
+        internal static void ExecuteProcedure(ProductDetail productInfo)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand storeCommand = new SqlCommand();
+                storeCommand.CommandText = "Add_Product_KAD";
+                storeCommand.CommandType = CommandType.StoredProcedure;
+                storeCommand.Connection = connection;
+
+                storeCommand.Parameters.AddWithValue("@SKU", productInfo.SKU);
+                storeCommand.Parameters.AddWithValue("@Description", productInfo.Description);
+                storeCommand.Parameters.AddWithValue("@Price", productInfo.Price);
+                storeCommand.Parameters.AddWithValue("@BrandCode", productInfo.BrandCode);
+                storeCommand.Parameters.AddWithValue("@Feature", productInfo.Feature);
+                storeCommand.Parameters.AddWithValue("@FeatureDescription", productInfo.FeatureDescription);
+                storeCommand.Parameters.AddWithValue("@FeatureType", productInfo.FeatureType);
+
+                storeCommand.ExecuteNonQuery();
+
+                connection.Close();
+                connection.Dispose();
+            }
+        }
 
     }
 }

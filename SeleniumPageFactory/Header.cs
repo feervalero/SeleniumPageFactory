@@ -1,8 +1,7 @@
 ﻿using System;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
 
-namespace SeleniumPageFactory
+namespace KitchenAid
 {
     public class Header
     {

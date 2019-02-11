@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Data.SqlClient;
+﻿using System;
+using System.Collections.Generic;
+using Microsoft.SqlServer.Server;
 using OpenQA.Selenium;
 
-namespace SeleniumPageFactory
+namespace KitchenAid
 {
     public static class PDP
     {
@@ -37,15 +38,39 @@ namespace SeleniumPageFactory
             {
                 var feature_title = pdpKeyFeature.FindElement(By.ClassName("pdp-features-tile-title")).Text;
                 var feature_description = pdpKeyFeature.FindElement(By.ClassName("pdp-features-tile-desc")).Text;
-                string command = "INSERT INTO Products(SKU,Feature,FeatureType,Price,Description,FeatureDescription) VALUES ('" + sku_code + "','" + feature_title + "','key','" + price + "','"+sku_description+"','"+ feature_description+"')";
-                DataBase.ExecuteNonQueryCommand(command);
+
+                //string command = "INSERT INTO Products(SKU,Feature,FeatureType,Price,Description,FeatureDescription) VALUES ('" + sku_code + "','" + feature_title + "','key','" + price + "','"+sku_description+"','"+ feature_description+"')";
+
+                ProductDetail product = new ProductDetail();
+                product.SKU = sku_code;
+                product.Feature = feature_title;
+                product.FeatureDescription = feature_description;
+                product.FeatureType = "key";
+                product.Price = price;
+                product.BrandCode = "KAD";
+                product.Description = sku_description;
+
+                DataBase.ExecuteProcedure(product);
+
+                
             }
             foreach (IWebElement pdpOtherFeature in pdp_other_features)
             {
                 var feature_title = pdpOtherFeature.FindElement(By.ClassName("pdp-add-feat-title")).Text;
                 var feature_description = pdpOtherFeature.FindElement(By.ClassName("pdp-add-feat-desc")).Text;
-                string command = "INSERT INTO Products(SKU,Feature,FeatureType,Price,Description,FeatureDescription) VALUES ('" + sku_code + "','" + feature_title + "','other','" + price + "','"+sku_description+"','"+ feature_description+ "')";
-                DataBase.ExecuteNonQueryCommand(command);
+                //string command = "INSERT INTO Products(SKU,Feature,FeatureType,Price,Description,FeatureDescription) VALUES ('" + sku_code + "','" + feature_title + "','other','" + price + "','"+sku_description+"','"+ feature_description+ "')";
+                
+
+                ProductDetail product = new ProductDetail();
+                product.SKU = sku_code;
+                product.Feature = feature_title;
+                product.FeatureDescription = feature_description;
+                product.FeatureType = "other";
+                product.Price = price;
+                product.BrandCode = "KAD";
+                product.Description = sku_description;
+
+                DataBase.ExecuteProcedure(product);
             }
             
             return true;

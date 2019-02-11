@@ -1000,9 +1000,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\valerf2\\source\\repos\\SeleniumPageFactory\\SeleniumPageFactory\\SeleniumPageFactory.csproj",
-      "projectName": "SeleniumPageFactory",
-      "projectPath": "C:\\Users\\valerf2\\source\\repos\\SeleniumPageFactory\\SeleniumPageFactory\\SeleniumPageFactory.csproj",
+      "projectUniqueName": "C:\\Users\\valerf2\\source\\repos\\SeleniumPageFactory\\SeleniumPageFactory\\KitchenAid.csproj",
+      "projectName": "KitchenAid",
+      "projectPath": "C:\\Users\\valerf2\\source\\repos\\SeleniumPageFactory\\SeleniumPageFactory\\KitchenAid.csproj",
       "packagesPath": "C:\\Users\\valerf2\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\valerf2\\source\\repos\\SeleniumPageFactory\\SeleniumPageFactory\\obj\\",
       "projectStyle": "PackageReference",

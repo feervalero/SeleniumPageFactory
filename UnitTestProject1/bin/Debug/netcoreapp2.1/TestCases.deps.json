@@ -8,10 +8,10 @@
     ".NETCoreApp,Version=v2.1": {
       "TestCases/1.0.0": {
         "dependencies": {
+          "KitchenAid": "1.0.0",
           "MSTest.TestAdapter": "1.3.2",
           "MSTest.TestFramework": "1.3.2",
-          "Microsoft.NET.Test.Sdk": "15.8.0",
-          "SeleniumPageFactory": "1.0.0"
+          "Microsoft.NET.Test.Sdk": "15.8.0"
         },
         "runtime": {
           "TestCases.dll": {}
@@ -1105,7 +1105,7 @@
           "EntityFramework.dll": {}
         }
       },
-      "SeleniumPageFactory/1.0.0": {
+      "KitchenAid/1.0.0": {
         "dependencies": {
           "DotNetSeleniumExtras.PageObjects.Core": "3.12.0",
           "EntityFramework": "1.0.0",
@@ -1115,7 +1115,7 @@
           "System.Data.SqlClient": "4.5.1"
         },
         "runtime": {
-          "SeleniumPageFactory.dll": {}
+          "KitchenAid.dll": {}
         }
       },
       "System.Web.Http.Reference/5.2.4.0": {
@@ -1834,7 +1834,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "SeleniumPageFactory/1.0.0": {
+    "KitchenAid/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
