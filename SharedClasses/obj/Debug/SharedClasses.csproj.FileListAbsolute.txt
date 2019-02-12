@@ -1,5 +1,6 @@
 C:\Users\valerf2\source\repos\SeleniumPageFactory\SharedClasses\bin\Debug\SharedClasses.dll
 C:\Users\valerf2\source\repos\SeleniumPageFactory\SharedClasses\bin\Debug\SharedClasses.pdb
+C:\Users\valerf2\source\repos\SeleniumPageFactory\SharedClasses\bin\Debug\SeleniumExtras.PageObjects.dll
 C:\Users\valerf2\source\repos\SeleniumPageFactory\SharedClasses\bin\Debug\WebDriver.dll
 C:\Users\valerf2\source\repos\SeleniumPageFactory\SharedClasses\bin\Debug\WebDriver.Support.dll
 C:\Users\valerf2\source\repos\SeleniumPageFactory\SharedClasses\bin\Debug\WebDriver.xml

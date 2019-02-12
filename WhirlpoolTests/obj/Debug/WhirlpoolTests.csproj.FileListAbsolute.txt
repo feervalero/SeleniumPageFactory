@@ -1,0 +1,2 @@
+C:\Users\valerf2\source\repos\SeleniumPageFactory\WhirlpoolTests\obj\Debug\WhirlpoolTests.csprojAssemblyReference.cache
+C:\Users\valerf2\source\repos\SeleniumPageFactory\WhirlpoolTests\obj\Debug\WhirlpoolTests.csproj.CoreCompileInputs.cache

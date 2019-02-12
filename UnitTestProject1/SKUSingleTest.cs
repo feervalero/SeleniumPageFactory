@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TestCases;
+using SharedClasses;
 
 namespace KitchenAidTests
 {
@@ -11,12 +12,11 @@ namespace KitchenAidTests
         [TestMethod]
         public void SearchAndValidate()
         {
-            string[] items = {
-                "5KSBSPJ"
-            };
+            //string[] items = {
+            //    "5KSBSPJ"
+            //};
 
-            //IList<string> items = KitchenAid.DataBase.GetProducts();
-
+            IList<string> items = DataBase.GetProducts("KAD");
             foreach (string item in items)
             {
                 KitchenAid.Header.SearchItem(item);

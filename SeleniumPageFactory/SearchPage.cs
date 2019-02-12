@@ -14,8 +14,6 @@ namespace KitchenAid
             IWebElement tab_indicator = Driver.Instance.FindElement(By.ClassName("slp-tab-count-value"));
             IWebElement found_indicator = Driver.Instance.FindElement(By.ClassName("plp-counter-value"));
 
-            var a = tab_indicator.Text;
-            var b = found_indicator.Text;
             var c = 1;
             var tab = 0;
             var found = 0;

@@ -42,9 +42,6 @@ namespace KitchenAid
             }
             
 
-            
-
-
             foreach (IWebElement pdpKeyFeature in pdp_key_features)
             {
                 var feature_title = "";

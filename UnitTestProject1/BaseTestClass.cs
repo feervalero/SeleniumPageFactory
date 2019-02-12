@@ -10,7 +10,7 @@ namespace TestCases
         {
             Driver.Initialize();
             Driver.Instance.Navigate().GoToUrl("https://kitchenaid.mx");
-            DataBase.CleanProductTable();
+            DataBase.CleanProductTable("KAD");
         }
 
         [TestCleanup]

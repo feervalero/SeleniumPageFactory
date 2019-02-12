@@ -10,13 +10,13 @@ namespace SharedClasses
             get { return "Server=APOL5CG8090XR8;Database=MXBrands;User Id=sa;Password = Calidad1; "; }
         }
 
-        public static void CleanProductTable()
+        public static void CleanProductTable(string BrandCode)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
 
-                string command = "DELETE FROM Products";
+                string command = "DELETE FROM Products WHERE BrandCode ='"+BrandCode+"'";
                 SqlCommand insertCommand = new SqlCommand(command, connection);
                 insertCommand.ExecuteNonQuery();
 
@@ -40,7 +40,7 @@ namespace SharedClasses
             }
         }
 
-        public static IList<string> GetProducts()
+        public static IList<string> GetProducts(string brandCode)
         {
             IList<string> datos = new List<string>();
 
@@ -48,7 +48,7 @@ namespace SharedClasses
             {
                 connection.Open();
 
-                string command = "SELECT ModelNumber FROM SKU";
+                string command = "SELECT ModelNumber FROM SKU where BrandCode = '"+brandCode+"'";
                 SqlCommand insertCommand = new SqlCommand(command, connection);
 
                 using (SqlDataReader result = insertCommand.ExecuteReader())

@@ -3,3 +3,11 @@ C:\Users\valerf2\source\repos\SeleniumPageFactory\Whirlpool\bin\Debug\Whirlpool.
 C:\Users\valerf2\source\repos\SeleniumPageFactory\Whirlpool\obj\Debug\Whirlpool.csproj.CoreCompileInputs.cache
 C:\Users\valerf2\source\repos\SeleniumPageFactory\Whirlpool\obj\Debug\Whirlpool.dll
 C:\Users\valerf2\source\repos\SeleniumPageFactory\Whirlpool\obj\Debug\Whirlpool.pdb
+C:\Users\valerf2\source\repos\SeleniumPageFactory\Whirlpool\bin\Debug\SharedClasses.dll
+C:\Users\valerf2\source\repos\SeleniumPageFactory\Whirlpool\bin\Debug\WebDriver.dll
+C:\Users\valerf2\source\repos\SeleniumPageFactory\Whirlpool\bin\Debug\WebDriver.Support.dll
+C:\Users\valerf2\source\repos\SeleniumPageFactory\Whirlpool\bin\Debug\SharedClasses.pdb
+C:\Users\valerf2\source\repos\SeleniumPageFactory\Whirlpool\bin\Debug\WebDriver.xml
+C:\Users\valerf2\source\repos\SeleniumPageFactory\Whirlpool\bin\Debug\WebDriver.Support.xml
+C:\Users\valerf2\source\repos\SeleniumPageFactory\Whirlpool\obj\Debug\Whirlpool.csprojAssemblyReference.cache
+C:\Users\valerf2\source\repos\SeleniumPageFactory\Whirlpool\obj\Debug\Whirlpool.csproj.CopyComplete
