@@ -4,6 +4,8 @@ using System.Text;
 using System.Threading;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
+using SharedClasses;
+
 
 namespace KitchenAid
 {

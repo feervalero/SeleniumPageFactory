@@ -1,6 +1,6 @@
 ﻿using KitchenAid;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
+using SharedClasses;
 namespace TestCases
 {
     public class BaseTestClass

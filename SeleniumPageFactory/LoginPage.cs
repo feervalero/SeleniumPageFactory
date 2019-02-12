@@ -1,5 +1,5 @@
 ﻿using OpenQA.Selenium;
-
+using SharedClasses;
 namespace KitchenAid
 {
     public class LoginPage

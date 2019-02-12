@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.IO;
-using KitchenAid;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TestCases;
 
@@ -12,49 +11,24 @@ namespace KitchenAidTests
         [TestMethod]
         public void SearchAndValidate()
         {
-            /*string[] items = {
-                "KOWT100ESS",
-                "KVIB606DSS",
-                "KDTM354ESS",
-                "KCGS956ESS",
-                "KICU569XBL",
-                "KRMF606ESS",
-                "KXW9736YSS",
-                "KDTM704ESS",
-                "KVWB606DSS"/*,
-                "KRSF505ESS",
-                "KOSE500ESS",
-                "KOCE500ESS",
-                "KGCU467VSS",
-                "KSGB900ESS",
-                "KUDR204ESB",
-                "KRFF707ESS",
-                "KBSD608ESS",
-                "KMCS3022GSS",
-                "KMCS1016GSS",
-                "KMHC319ESS",
-                "KXD4636YSS",
-                "KUIX305ESS",
-                "KCDS075T",
-                "KUIX505ESS",
-                "KUBR304ESS",
-                "KUWR304ESS"
+            string[] items = {
+                "5KSBSPJ"
             };
-            */
-            IList<string> items = DataBase.GetProducts();
+
+            //IList<string> items = KitchenAid.DataBase.GetProducts();
 
             foreach (string item in items)
             {
-                Header.SearchItem(item);
-                if (SearchPage.hasResults())
+                KitchenAid.Header.SearchItem(item);
+                if (KitchenAid.SearchPage.hasResults())
                 {
-                    SearchPage.GoToPDP();
-                    Assert.IsTrue(PDP.HasPrice(), "Price not found");
-                    Assert.IsTrue(PDP.HasFeatures(), "Features not found");
+                    KitchenAid.SearchPage.GoToPDP();
+                    Assert.IsTrue(KitchenAid.PDP.HasPrice(), "Price not found");
+                    Assert.IsTrue(KitchenAid.PDP.HasFeatures(), "Features not found");
                 }
                 else
                 {
-                    DataBase.InsertNotFoundItem(item);
+                    SharedClasses.DataBase.InsertNotFoundItem(item);
                 }
             }
             

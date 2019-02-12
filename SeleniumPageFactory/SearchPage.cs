@@ -2,7 +2,7 @@
 using System.Collections.ObjectModel;
 using System.Threading;
 using OpenQA.Selenium;
-
+using SharedClasses;
 namespace KitchenAid
 {
     public static class SearchPage

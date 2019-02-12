@@ -1,0 +1,5 @@
+C:\Users\valerf2\source\repos\SeleniumPageFactory\Whirlpool\bin\Debug\Whirlpool.dll
+C:\Users\valerf2\source\repos\SeleniumPageFactory\Whirlpool\bin\Debug\Whirlpool.pdb
+C:\Users\valerf2\source\repos\SeleniumPageFactory\Whirlpool\obj\Debug\Whirlpool.csproj.CoreCompileInputs.cache
+C:\Users\valerf2\source\repos\SeleniumPageFactory\Whirlpool\obj\Debug\Whirlpool.dll
+C:\Users\valerf2\source\repos\SeleniumPageFactory\Whirlpool\obj\Debug\Whirlpool.pdb
