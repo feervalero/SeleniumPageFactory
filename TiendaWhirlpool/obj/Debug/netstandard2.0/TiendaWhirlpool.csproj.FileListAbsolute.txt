@@ -2,6 +2,7 @@ C:\Users\valerf2\source\repos\SeleniumPageFactory\TiendaWhirlpool\bin\Debug\nets
 C:\Users\valerf2\source\repos\SeleniumPageFactory\TiendaWhirlpool\bin\Debug\netstandard2.0\TiendaWhirlpool.dll
 C:\Users\valerf2\source\repos\SeleniumPageFactory\TiendaWhirlpool\bin\Debug\netstandard2.0\TiendaWhirlpool.pdb
 C:\Users\valerf2\source\repos\SeleniumPageFactory\TiendaWhirlpool\bin\Debug\netstandard2.0\Interop.OleDbSrc.dll
+C:\Users\valerf2\source\repos\SeleniumPageFactory\TiendaWhirlpool\obj\Debug\netstandard2.0\TiendaWhirlpool.csprojAssemblyReference.cache
 C:\Users\valerf2\source\repos\SeleniumPageFactory\TiendaWhirlpool\obj\Debug\netstandard2.0\Interop.OleDbSrc.dll
 C:\Users\valerf2\source\repos\SeleniumPageFactory\TiendaWhirlpool\obj\Debug\netstandard2.0\TiendaWhirlpool.csproj.ResolveComReference.cache
 C:\Users\valerf2\source\repos\SeleniumPageFactory\TiendaWhirlpool\obj\Debug\netstandard2.0\TiendaWhirlpool.csproj.CoreCompileInputs.cache

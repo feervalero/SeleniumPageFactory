@@ -10,7 +10,7 @@ namespace Whirlpool
         public void init()
         {
             Driver.Initialize();
-            Driver.Instance.Navigate().GoToUrl("https://whirlpool.mx");
+            Driver.Instance.Navigate().GoToUrl("https://www.whirlpool.mx/resultados-de-busqueda.html?term=AAAAA");
             DataBase.CleanProductTable("WHR");
         }
 

@@ -1,7 +1,3 @@
-C:\Users\valerf2\source\repos\SeleniumPageFactory\WhirlpoolTest\obj\Debug\netcoreapp2.1\WhirlpoolTest.csprojAssemblyReference.cache
-C:\Users\valerf2\source\repos\SeleniumPageFactory\WhirlpoolTest\obj\Debug\netcoreapp2.1\WhirlpoolTest.csproj.CoreCompileInputs.cache
-C:\Users\valerf2\source\repos\SeleniumPageFactory\WhirlpoolTest\obj\Debug\netcoreapp2.1\WhirlpoolTest.AssemblyInfoInputs.cache
-C:\Users\valerf2\source\repos\SeleniumPageFactory\WhirlpoolTest\obj\Debug\netcoreapp2.1\WhirlpoolTest.AssemblyInfo.cs
 C:\Users\valerf2\source\repos\SeleniumPageFactory\WhirlpoolTest\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
 C:\Users\valerf2\source\repos\SeleniumPageFactory\WhirlpoolTest\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
 C:\Users\valerf2\source\repos\SeleniumPageFactory\WhirlpoolTest\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
@@ -16,8 +12,10 @@ C:\Users\valerf2\source\repos\SeleniumPageFactory\WhirlpoolTest\bin\Debug\netcor
 C:\Users\valerf2\source\repos\SeleniumPageFactory\WhirlpoolTest\bin\Debug\netcoreapp2.1\SharedClasses.pdb
 C:\Users\valerf2\source\repos\SeleniumPageFactory\WhirlpoolTest\bin\Debug\netcoreapp2.1\Whirlpool.pdb
 C:\Users\valerf2\source\repos\SeleniumPageFactory\WhirlpoolTest\bin\Debug\netcoreapp2.1\WebDriver.xml
+C:\Users\valerf2\source\repos\SeleniumPageFactory\WhirlpoolTest\obj\Debug\netcoreapp2.1\WhirlpoolTest.csprojAssemblyReference.cache
+C:\Users\valerf2\source\repos\SeleniumPageFactory\WhirlpoolTest\obj\Debug\netcoreapp2.1\WhirlpoolTest.csproj.CoreCompileInputs.cache
+C:\Users\valerf2\source\repos\SeleniumPageFactory\WhirlpoolTest\obj\Debug\netcoreapp2.1\WhirlpoolTest.AssemblyInfoInputs.cache
+C:\Users\valerf2\source\repos\SeleniumPageFactory\WhirlpoolTest\obj\Debug\netcoreapp2.1\WhirlpoolTest.AssemblyInfo.cs
 C:\Users\valerf2\source\repos\SeleniumPageFactory\WhirlpoolTest\obj\Debug\netcoreapp2.1\WhirlpoolTest.csproj.CopyComplete
 C:\Users\valerf2\source\repos\SeleniumPageFactory\WhirlpoolTest\obj\Debug\netcoreapp2.1\WhirlpoolTest.dll
 C:\Users\valerf2\source\repos\SeleniumPageFactory\WhirlpoolTest\obj\Debug\netcoreapp2.1\WhirlpoolTest.pdb
-C:\Users\valerf2\source\repos\SeleniumPageFactory\WhirlpoolTest\bin\Debug\netcoreapp2.1\WebDriver.Support.dll
-C:\Users\valerf2\source\repos\SeleniumPageFactory\WhirlpoolTest\bin\Debug\netcoreapp2.1\WebDriver.Support.xml

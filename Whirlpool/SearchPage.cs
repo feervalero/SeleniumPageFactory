@@ -15,51 +15,36 @@ namespace Whirlpool
         public static bool hasResults()
         {
 
-            WebDriverWait wait = new WebDriverWait(Driver.Instance, TimeSpan.FromSeconds(10));
-            wait.Until(ExpectedConditions.InvisibilityOfElementLocated(By.Id("ajax-container-search")));
+            WebDriverWait wait = new WebDriverWait(Driver.Instance,TimeSpan.FromSeconds(10));
 
-            IWebElement count_indicador = Driver.Instance.FindElement(By.ClassName("count-value"));
-            IWebElement tab_indicator = Driver.Instance.FindElement(By.Id("total-search-results"));
+            wait.Until(driver => driver.FindElement(By.XPath("//*[@id='search-tab']/ul/li[1]")));
 
+            IWebElement tabResult = Driver.Instance.FindElement(By.XPath("//*[@id='search-tab']/ul/li[1]"));
+            tabResult.Click();
 
-            Driver.Instance.FindElement(By.CssSelector("#search-tab > ul > li:nth-child(1) > a")).Click();
+            var tab_total = Driver.Instance.FindElement(By.Id("total-search-results")).Text;
 
-            var tab = 0;
-            var count = 0;
-            try
+            Int32 total = Int32.Parse(tab_total);
+
+            if (total > 0)
             {
-                tab = Convert.ToInt32(tab_indicator.Text);
-            }
-            catch (System.FormatException)
-            {
-                tab = 0;
-            }
-
-            try
-            {
-                count= Convert.ToInt32(count_indicador.Text);
-            }
-            catch (System.FormatException)
-            {
-                count = 0;
-            }
-
-
-
-
-            if (tab > 0 && count > 0)
-            {
+                
                 return true;
             }
-            else return false;
+            else
+            {
+                return false;
+            }
         }
 
         public static void GoToPDP()
         {
-            
-            System.Collections.ObjectModel.ReadOnlyCollection<IWebElement> itemsFounded =
+
+            IList<IWebElement> items_Found =
                 Driver.Instance.FindElements(By.ClassName("product-view-details"));
-            itemsFounded[0].Click();
+
+            //Check if is in PDP
+            items_Found[0].Click();
         }
     }
 }

@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedClasses", "SharedClas
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhirlpoolTest", "WhirlpoolTest\WhirlpoolTest.csproj", "{A375CB71-61E3-4F86-8D58-96EF10BFD9AF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Maytag", "Maytag\Maytag.csproj", "{EEB16673-B260-431C-9E1F-682586AF047B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaytagTests", "MaytagTests\MaytagTests.csproj", "{35698865-70E6-44AB-B987-82C150A42D84}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{A375CB71-61E3-4F86-8D58-96EF10BFD9AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A375CB71-61E3-4F86-8D58-96EF10BFD9AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A375CB71-61E3-4F86-8D58-96EF10BFD9AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEB16673-B260-431C-9E1F-682586AF047B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEB16673-B260-431C-9E1F-682586AF047B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEB16673-B260-431C-9E1F-682586AF047B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEB16673-B260-431C-9E1F-682586AF047B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35698865-70E6-44AB-B987-82C150A42D84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35698865-70E6-44AB-B987-82C150A42D84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35698865-70E6-44AB-B987-82C150A42D84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35698865-70E6-44AB-B987-82C150A42D84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

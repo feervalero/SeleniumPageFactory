@@ -5,8 +5,8 @@ C:\Users\valerf2\source\repos\SeleniumPageFactory\SharedClasses\bin\Debug\WebDri
 C:\Users\valerf2\source\repos\SeleniumPageFactory\SharedClasses\bin\Debug\WebDriver.Support.dll
 C:\Users\valerf2\source\repos\SeleniumPageFactory\SharedClasses\bin\Debug\WebDriver.xml
 C:\Users\valerf2\source\repos\SeleniumPageFactory\SharedClasses\bin\Debug\WebDriver.Support.xml
+C:\Users\valerf2\source\repos\SeleniumPageFactory\SharedClasses\obj\Debug\SharedClasses.csprojAssemblyReference.cache
 C:\Users\valerf2\source\repos\SeleniumPageFactory\SharedClasses\obj\Debug\SharedClasses.csproj.CoreCompileInputs.cache
 C:\Users\valerf2\source\repos\SeleniumPageFactory\SharedClasses\obj\Debug\SharedClasses.csproj.CopyComplete
 C:\Users\valerf2\source\repos\SeleniumPageFactory\SharedClasses\obj\Debug\SharedClasses.dll
 C:\Users\valerf2\source\repos\SeleniumPageFactory\SharedClasses\obj\Debug\SharedClasses.pdb
-C:\Users\valerf2\source\repos\SeleniumPageFactory\SharedClasses\obj\Debug\SharedClasses.csprojAssemblyReference.cache

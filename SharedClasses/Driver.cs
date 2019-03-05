@@ -12,6 +12,7 @@ namespace SharedClasses
         {
             Instance = new ChromeDriver(@"C:\Users\valerf2\Downloads\chromedriver");
             Instance.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            Instance.Manage().Window.Maximize();
             
         }
 

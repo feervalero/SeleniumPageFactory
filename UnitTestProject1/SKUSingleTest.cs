@@ -28,7 +28,7 @@ namespace KitchenAidTests
                 }
                 else
                 {
-                    SharedClasses.DataBase.InsertNotFoundItem(item);
+                    SharedClasses.DataBase.InsertNotFoundItem(item,"KAD");
                 }
             }
             
