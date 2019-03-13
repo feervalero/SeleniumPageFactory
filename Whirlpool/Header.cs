@@ -19,7 +19,7 @@ namespace Whirlpool
             input_search_form.Clear();
             input_search_form.SendKeys(item);
             input_search_form.SendKeys(Keys.Enter);
-            Thread.Sleep(TimeSpan.FromSeconds(15));
+            Thread.Sleep(TimeSpan.FromSeconds(10));
            
 
         }

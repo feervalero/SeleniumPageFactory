@@ -10,6 +10,35 @@ namespace Whirlpool
     [TestClass]
     public class SKUSingleTest : WhirlpoolBaseTestClass
     {
+
+        [TestMethod]
+        public void BuscarManuales()
+        {
+            IList<string> items = DataBase.GetPendingManuals();
+
+            foreach (string item in items)
+            {
+                Whirlpool.Header.SearchItem(item);
+                if (Whirlpool.SearchPage.hasResults())
+                {
+                    Whirlpool.SearchPage.GoToPDP();
+                    if (Whirlpool.PDP.IsAt)
+                    {
+                        Whirlpool.PDP.getDocuments(item);
+                    }
+                    else
+                    {
+                        DataBase.AddManual(item, "PDP error", "PDP error", "0");
+                    }
+                }
+                else
+                {
+                    DataBase.AddManual(item,"no searchable","no searchable","0");
+                }
+            }
+
+        }
+
         [TestMethod]
         public void SearchAndValidate()
         {

@@ -15,7 +15,7 @@ namespace Whirlpool
         public static bool hasResults()
         {
 
-            WebDriverWait wait = new WebDriverWait(Driver.Instance,TimeSpan.FromSeconds(10));
+            WebDriverWait wait = new WebDriverWait(Driver.Instance,TimeSpan.FromSeconds(8));
 
             wait.Until(driver => driver.FindElement(By.XPath("//*[@id='search-tab']/ul/li[1]")));
 

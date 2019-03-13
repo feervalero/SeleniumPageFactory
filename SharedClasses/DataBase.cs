@@ -110,6 +110,29 @@ namespace SharedClasses
 
         }
 
+        public static void AddManual(string item, string a_text, string a_href, string active)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand storeCommand = new SqlCommand();
+                storeCommand.CommandText = "Add_Manual";
+                storeCommand.CommandType = CommandType.StoredProcedure;
+                storeCommand.Connection = connection;
+
+                storeCommand.Parameters.AddWithValue("@SKU", item);
+                storeCommand.Parameters.AddWithValue("@Description", a_text);
+                storeCommand.Parameters.AddWithValue("@Url", a_href);
+                storeCommand.Parameters.AddWithValue("@Active", active);
+
+                storeCommand.ExecuteNonQuery();
+
+                connection.Close();
+                connection.Dispose();
+            }
+
+        }
+
         public static void TempToAllOk()
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -182,6 +205,34 @@ namespace SharedClasses
 
                 return datos;
             }
+        }
+
+        public static IList<string> GetPendingManuals()
+        {
+            IList<string> datos = new List<string>();
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                string command = "select SKU.ModelNumber from SKU left join Manuals m on m.SKU = SKU.ModelNumber where BrandCode = 'Manuals' and m.ID is null";
+                SqlCommand insertCommand = new SqlCommand(command, connection);
+
+                using (SqlDataReader result = insertCommand.ExecuteReader())
+                {
+
+                    while (result.Read())
+                    {
+                        datos.Add(result[0].ToString());
+                    }
+                }
+
+
+                connection.Close();
+                connection.Dispose();
+
+                return datos;
+            }
+
         }
 
         public static void InsertImage(string item, string url, int active)

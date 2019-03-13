@@ -46,6 +46,24 @@ namespace Whirlpool
             }
         }
 
+        public static void getDocuments(string item)
+        {
+            try
+            {
+                IWebElement listOfDocuments = Driver.Instance.FindElement(By.Id("documents"));
+                IWebElement doc = listOfDocuments.FindElement(By.TagName("A"));
+                var a_text = doc.Text;
+                var a_href = doc.GetAttribute("href");
+                DataBase.AddManual(item,a_text,a_href,"1");
+            }
+            catch (NoSuchElementException e)
+            {
+                DataBase.AddManual(item,"no doc","no doc","0");
+            }
+                
+            
+        }
+
         public static void getInfoFromPDP(string item)
         {
             ProductDetail product = new ProductDetail();
