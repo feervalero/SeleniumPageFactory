@@ -42,7 +42,29 @@ namespace SharedClasses
             }
         }
 
-        
+        public static void InsertProductListPage(string url)
+        {
+            //SP: [Add_ProductListPage]
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand storeCommand = new SqlCommand();
+                storeCommand.CommandText = "Add_ProductListPage";
+                storeCommand.CommandType = CommandType.StoredProcedure;
+                storeCommand.Connection = connection;
+
+                storeCommand.Parameters.AddWithValue("@Url", url);
+                storeCommand.Parameters.AddWithValue("@Name", url);
+                
+
+                storeCommand.ExecuteNonQuery();
+
+                connection.Close();
+                connection.Dispose();
+
+
+            }
+        }
 
         public static IList<ResultType> Compare()
         {
@@ -108,6 +130,30 @@ namespace SharedClasses
                 return datos;
             }
 
+        }
+
+        public static void InsertProductListPageDetail(string url, string sku)
+        {
+            //SP: [Add_ProductListPage]
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand storeCommand = new SqlCommand();
+                storeCommand.CommandText = "Add_ProductListPageDetail";
+                storeCommand.CommandType = CommandType.StoredProcedure;
+                storeCommand.Connection = connection;
+
+                storeCommand.Parameters.AddWithValue("@Url", url);
+                storeCommand.Parameters.AddWithValue("@Sku", sku);
+
+
+                storeCommand.ExecuteNonQuery();
+
+                connection.Close();
+                connection.Dispose();
+
+
+            }
         }
 
         public static void AddManual(string item, string a_text, string a_href, string active)

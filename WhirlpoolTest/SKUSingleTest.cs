@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SharedClasses;
 
@@ -10,6 +11,18 @@ namespace Whirlpool
     [TestClass]
     public class SKUSingleTest : WhirlpoolBaseTestClass
     {
+
+        [TestMethod]
+        public void CheckPLPs()
+        {
+            Assert.IsTrue(Whirlpool.Header.GetMenus());
+        }
+
+        [TestMethod]
+        public void CheckPDPs()
+        {
+            Assert.IsTrue(Whirlpool.Header.GetMenus());
+        }
 
         [TestMethod]
         public void BuscarManuales()
