@@ -21,7 +21,14 @@ namespace Whirlpool
         [TestMethod]
         public void CheckPDPs()
         {
-            Assert.IsTrue(Whirlpool.Header.GetMenus());
+            IList<string> products = new List<string>();
+
+            foreach (string product in products)
+            {
+                
+            }
+
+            Assert.IsTrue(true);
         }
 
         [TestMethod]
@@ -31,6 +38,7 @@ namespace Whirlpool
 
             foreach (string item in items)
             {
+                DataBase.AddItem(item);
                 Whirlpool.Header.SearchItem(item);
                 if (Whirlpool.SearchPage.hasResults())
                 {
@@ -41,7 +49,15 @@ namespace Whirlpool
                     }
                     else
                     {
+                        var DetailTypeId = DataBase.GetDetailTypeId("No-Doc");
+                        ProductDetailPage pdp = new ProductDetailPage();
+                        pdp.ProductoId = item;
+                        pdp.URL = Driver.Instance.Url;
+                        pdp.Date = "101019";
+
+                        DataBase.AddPDP(pdp);
                         DataBase.AddManual(item, "PDP error", "PDP error", "0");
+                        //DataBase.AddManual2(item, "PDP error", "PDP error", "0");
                     }
                 }
                 else

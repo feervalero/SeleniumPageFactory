@@ -55,6 +55,22 @@ namespace Whirlpool
                 var a_text = doc.Text;
                 var a_href = doc.GetAttribute("href");
                 DataBase.AddManual(item,a_text,a_href,"1");
+
+                ProductDetailPage pdp = new ProductDetailPage();
+                pdp.Date = "010119";
+                pdp.ProductoId = item;
+                pdp.URL = Driver.Instance.Url;
+
+                var PDPId = DataBase.AddPDP(pdp);
+
+                ProductDetail2 pd = new ProductDetail2();
+                pd.DetailTypeId = DataBase.GetDetailTypeId("Manual");
+                pd.Date = "010219";
+                pd.Value = a_href;
+                pd.ProductDetailPageId = PDPId;
+
+                DataBase.AddProductDetail(pd);
+
             }
             catch (NoSuchElementException e)
             {
@@ -212,22 +228,26 @@ namespace Whirlpool
 
         public static bool IsAt
         {
-            get
-            {
+            get{
                 try
                 {
-                    IWebElement neWebElement = Driver.Instance.FindElement(By.XPath("//*[@id='main']/div/div[1]/div/h3"));
-                    Driver.Instance.Navigate().GoToUrl("https://www.whirlpool.mx/resultados-de-busqueda.html?term=AAAAA");
+                    IWebElement neWebElement =
+                        Driver.Instance.FindElement(By.XPath("//*[@id='main']/div/div[1]/div/h3"));
+
+                    string url = Driver.Instance.Url;
+
+                    Driver.Instance.Navigate()
+                        .GoToUrl("https://www.whirlpool.mx/resultados-de-busqueda.html?term=AAAAA");
                     Thread.Sleep(TimeSpan.FromSeconds(5));
-                    return false;                                                    //*[@id="main"]/div/div[1]/div/h3
+                    return false; //*[@id="main"]/div/div[1]/div/h3
                 }
                 catch (NoSuchElementException e)
                 {
-                    
                     return true;
                 }
-
             }
+
+
         }
 
         public static bool HasFeatures()

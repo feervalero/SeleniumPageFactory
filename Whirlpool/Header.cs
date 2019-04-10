@@ -34,16 +34,23 @@ namespace Whirlpool
             
             foreach (IWebElement link in links)
             {
+
                 if(link.GetAttribute("href") != null) urlsList.Add(link.GetAttribute("href"));
                 
             }
 
+
             foreach (string url in urlsList)
             {
+                ProductListPage plp = new ProductListPage();
+                plp.URL = url;
+                plp.Name = "Name";
                 Driver.Instance.Navigate().GoToUrl(url);
+
                 if (Header.IsPLP())
                 {
                     DataBase.InsertProductListPage(url);
+                    var PDPId = DataBase.AddPLP(plp);
                     var result = Header.SaveAllProducts(url);
                 }
             }

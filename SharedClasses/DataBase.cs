@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Xml.XPath;
 
 namespace SharedClasses
@@ -27,6 +28,138 @@ namespace SharedClasses
             }
         }
 
+        public static string AddItem(string item)
+        {
+            string resultado = "";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand storeCommand = new SqlCommand();
+                storeCommand.CommandText = "AddItem";
+                storeCommand.CommandType = CommandType.StoredProcedure;
+                storeCommand.Connection = connection;
+
+                storeCommand.Parameters.AddWithValue("@SKU", item);
+
+
+                using (SqlDataReader result = storeCommand.ExecuteReader())
+                {
+
+                    while (result.Read())
+                    {
+                        resultado = result[0].ToString();
+                    }
+                }
+
+                connection.Close();
+                connection.Dispose();
+
+                return resultado;
+            }
+        }
+
+        public static object AddPLP(ProductListPage plp)
+        {
+            string resultado = "";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand storeCommand = new SqlCommand();
+                storeCommand.CommandText = "AddPLP";
+                storeCommand.CommandType = CommandType.StoredProcedure;
+                storeCommand.Connection = connection;
+
+                storeCommand.Parameters.AddWithValue("@URL", plp.URL);
+                storeCommand.Parameters.AddWithValue("@Name", plp.Name);
+                
+
+
+
+
+                using (SqlDataReader result = storeCommand.ExecuteReader())
+                {
+
+                    while (result.Read())
+                    {
+                        resultado = result[0].ToString();
+                    }
+                }
+
+                connection.Close();
+                connection.Dispose();
+
+                return resultado;
+            }
+        }
+
+        public static string AddProductDetail(ProductDetail2 pd)
+        {
+            string resultado = "";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand storeCommand = new SqlCommand();
+                storeCommand.CommandText = "AddProductDetail";
+                storeCommand.CommandType = CommandType.StoredProcedure;
+                storeCommand.Connection = connection;
+
+                storeCommand.Parameters.AddWithValue("@DetailTypeId", Guid.Parse(pd.DetailTypeId));
+                storeCommand.Parameters.AddWithValue("@ProductDetailPageId", Guid.Parse(pd.ProductDetailPageId));
+                storeCommand.Parameters.AddWithValue("@Value", pd.Value);
+                storeCommand.Parameters.AddWithValue("@Date", pd.Date);
+
+
+
+                using (SqlDataReader result = storeCommand.ExecuteReader())
+                {
+
+                    while (result.Read())
+                    {
+                        resultado = result[0].ToString();
+                    }
+                }
+
+                connection.Close();
+                connection.Dispose();
+
+                return resultado;
+            }
+        }
+
+        public static string AddPDP(ProductDetailPage pdp)
+        {
+            string resultado = "";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand storeCommand = new SqlCommand();
+                storeCommand.CommandText = "AddPDP";
+                storeCommand.CommandType = CommandType.StoredProcedure;
+                storeCommand.Connection = connection;
+
+                storeCommand.Parameters.AddWithValue("@SKU", pdp.ProductoId);
+                storeCommand.Parameters.AddWithValue("@URL", pdp.URL);
+                storeCommand.Parameters.AddWithValue("@Date", pdp.Date);
+
+
+
+
+                using (SqlDataReader result = storeCommand.ExecuteReader())
+                {
+
+                    while (result.Read())
+                    {
+                        resultado = result[0].ToString();
+                    }
+                }
+
+                connection.Close();
+                connection.Dispose();
+
+                return resultado;
+            }
+        }
+
         public static void InsertNotFoundItem(string item, string brandCode)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -42,6 +175,11 @@ namespace SharedClasses
             }
         }
 
+        public static void AddManual2(string item, string v1, string v2, string v3)
+        {
+            throw new NotImplementedException();
+        }
+
         public static void InsertProductListPage(string url)
         {
             //SP: [Add_ProductListPage]
@@ -49,11 +187,11 @@ namespace SharedClasses
             {
                 connection.Open();
                 SqlCommand storeCommand = new SqlCommand();
-                storeCommand.CommandText = "Add_ProductListPage";
+                storeCommand.CommandText = "AddPLP";
                 storeCommand.CommandType = CommandType.StoredProcedure;
                 storeCommand.Connection = connection;
 
-                storeCommand.Parameters.AddWithValue("@Url", url);
+                storeCommand.Parameters.AddWithValue("@URL", url);
                 storeCommand.Parameters.AddWithValue("@Name", url);
                 
 
@@ -143,7 +281,7 @@ namespace SharedClasses
                 storeCommand.CommandType = CommandType.StoredProcedure;
                 storeCommand.Connection = connection;
 
-                storeCommand.Parameters.AddWithValue("@Url", url);
+                storeCommand.Parameters.AddWithValue("@URL", url);
                 storeCommand.Parameters.AddWithValue("@Sku", sku);
 
 
@@ -178,6 +316,8 @@ namespace SharedClasses
             }
 
         }
+
+        
 
         public static void TempToAllOk()
         {
@@ -260,7 +400,7 @@ namespace SharedClasses
             {
                 connection.Open();
 
-                string command = "select SKU.ModelNumber from SKU left join Manuals m on m.SKU = SKU.ModelNumber where BrandCode = 'Manuals' and m.ID is null";
+                string command = "exec GetPendingManuals";
                 SqlCommand insertCommand = new SqlCommand(command, connection);
 
                 using (SqlDataReader result = insertCommand.ExecuteReader())
@@ -269,6 +409,40 @@ namespace SharedClasses
                     while (result.Read())
                     {
                         datos.Add(result[0].ToString());
+                    }
+                }
+
+
+                connection.Close();
+                connection.Dispose();
+
+                return datos;
+            }
+
+        }
+        public static string GetDetailTypeId(string DetailDescription)
+        {
+            
+            string datos = "";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                
+                SqlCommand storeCommand = new SqlCommand();
+                storeCommand.CommandText = "GetDetailTypeId";
+                storeCommand.CommandType = CommandType.StoredProcedure;
+                storeCommand.Connection = connection;
+                storeCommand.Parameters.AddWithValue("@DetailDescription", DetailDescription);
+
+                
+
+                using (SqlDataReader result = storeCommand.ExecuteReader())
+                {
+
+                    while (result.Read())
+                    {
+                        datos = result[0].ToString();
                     }
                 }
 
