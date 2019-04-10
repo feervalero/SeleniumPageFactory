@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -19,17 +20,12 @@ namespace Whirlpool
         }
 
         [TestMethod]
-        public void CheckPDPs()
+        public void TestDate()
         {
-            IList<string> products = new List<string>();
-
-            foreach (string product in products)
-            {
-                
-            }
-
-            Assert.IsTrue(true);
+            var a = DataBase.GetDateFormatDB();
+            a = "";
         }
+
 
         [TestMethod]
         public void BuscarManuales()
@@ -40,34 +36,34 @@ namespace Whirlpool
             {
                 DataBase.AddItem(item);
                 Whirlpool.Header.SearchItem(item);
-                if (Whirlpool.SearchPage.hasResults())
+                if (Whirlpool.SearchPage.hasResults(item))
                 {
                     Whirlpool.SearchPage.GoToPDP();
                     if (Whirlpool.PDP.IsAt)
                     {
                         Whirlpool.PDP.getDocuments(item);
+                        Whirlpool.PDP.getInfoFromPDP(item);
                     }
                     else
                     {
-                        var DetailTypeId = DataBase.GetDetailTypeId("No-Doc");
-                        ProductDetailPage pdp = new ProductDetailPage();
-                        pdp.ProductoId = item;
-                        pdp.URL = Driver.Instance.Url;
-                        pdp.Date = "101019";
-
-                        DataBase.AddPDP(pdp);
-                        DataBase.AddManual(item, "PDP error", "PDP error", "0");
+                        
+                        //DataBase.AddManual(item, "PDP error", "PDP error", "0");
                         //DataBase.AddManual2(item, "PDP error", "PDP error", "0");
                     }
                 }
                 else
                 {
-                    DataBase.AddManual(item,"no searchable","no searchable","0");
+                    //DataBase.AddManual(item,"no searchable","no searchable","0");
                 }
+
+                var a = item;
+                a = "";
             }
 
-        }
+            
 
+        }
+        /*
         [TestMethod]
         public void SearchAndValidate()
         {
@@ -88,7 +84,7 @@ namespace Whirlpool
                     if (Whirlpool.PDP.IsAt)
                     {
                         Whirlpool.PDP.getInfoFromPDP(item);
-                        Assert.IsTrue(DataBase.ISCountByItem(item),"Item with error on saving:"+item);
+                        Assert.IsTrue(true);
                     }
                     else
                     {
@@ -109,7 +105,7 @@ namespace Whirlpool
             
 
         }
-
+        
         [TestMethod]
         public void CompareDataBase()
         {
@@ -141,7 +137,7 @@ namespace Whirlpool
                 //TODO Guarda sesion tal cual con version estable como last version updated
 
             }
-        }
+        }*/ //Aqui se guardo lo del mail
 
         [TestMethod]
         public bool SendMailWithResult(string body)

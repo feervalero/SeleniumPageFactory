@@ -3,6 +3,7 @@ using SharedClasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -12,15 +13,27 @@ namespace Whirlpool
 {
     public class SearchPage
     {
-        public static bool hasResults()
+        public static bool hasResults(string item)
         {
 
             WebDriverWait wait = new WebDriverWait(Driver.Instance,TimeSpan.FromSeconds(8));
 
-            wait.Until(driver => driver.FindElement(By.XPath("//*[@id='search-tab']/ul/li[1]")));
+            //wait.Until(driver => driver.FindElement(By.XPath("//*[@id='search-tab']/ul/li[1]")));
 
-            IWebElement tabResult = Driver.Instance.FindElement(By.XPath("//*[@id='search-tab']/ul/li[1]"));
-            tabResult.Click();
+            try
+            {
+                IWebElement tabResult = Driver.Instance.FindElement(By.XPath("//*[@id='search-tab']/ul/li[1]"));
+                tabResult.Click();
+            }
+            catch (NoSuchElementException e)
+            {
+                Header.SearchItem(item);
+                IWebElement tabResult = Driver.Instance.FindElement(By.XPath("//*[@id='search-tab']/ul/li[1]"));
+                tabResult.Click();
+            }
+            
+
+            
 
             var tab_total = Driver.Instance.FindElement(By.Id("total-search-results")).Text;
 

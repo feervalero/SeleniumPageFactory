@@ -126,6 +126,11 @@ namespace SharedClasses
             }
         }
 
+        public static string GetDateFormatDB()
+        {
+            return DateTime.Now.Day.ToString().PadLeft(2, '0') + DateTime.Now.Month.ToString().PadLeft(2, '0') + DateTime.Now.Year.ToString().Substring(2);
+        }
+
         public static string AddPDP(ProductDetailPage pdp)
         {
             string resultado = "";
@@ -175,11 +180,7 @@ namespace SharedClasses
             }
         }
 
-        public static void AddManual2(string item, string v1, string v2, string v3)
-        {
-            throw new NotImplementedException();
-        }
-
+        
         public static void InsertProductListPage(string url)
         {
             //SP: [Add_ProductListPage]
@@ -319,52 +320,9 @@ namespace SharedClasses
 
         
 
-        public static void TempToAllOk()
-        {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
+        
 
-                string command = "exec TempToAllOk '" + Guid.NewGuid() + "'";
-                SqlCommand insertCommand = new SqlCommand(command, connection);
-
-                connection.Close();
-                connection.Dispose();
-
-            }
-        }
-
-        public static void TempToAll()
-        {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-
-                string command = "exec TempToAll '" + Guid.NewGuid() + "'";
-                SqlCommand insertCommand = new SqlCommand(command, connection);
-
-                connection.Close();
-                connection.Dispose();
-
-            }
-        }
-
-        public static bool ISCountByItem(string item )
-        {
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-
-                string command = "exec TempToAll '" + Guid.NewGuid() + "'";
-                SqlCommand insertCommand = new SqlCommand(command, connection);
-
-                connection.Close();
-                connection.Dispose();
-
-                return true;
-            }
-        }
-
+       
         public static IList<string> GetProducts(string brandCode)
         {
             IList<string> datos = new List<string>();
@@ -501,7 +459,7 @@ namespace SharedClasses
                 storeCommand.CommandType = CommandType.StoredProcedure;
                 storeCommand.Connection = connection;
 
-                storeCommand.Parameters.AddWithValue("@SKU", productInfo.SKU);
+                /*storeCommand.Parameters.AddWithValue("@SKU", productInfo.SKU);
                 storeCommand.Parameters.AddWithValue("@MaterialFeature", productInfo.MaterialFeature);
                 storeCommand.Parameters.AddWithValue("@Description", productInfo.Description);
                 storeCommand.Parameters.AddWithValue("@Price", productInfo.Price);
@@ -509,7 +467,7 @@ namespace SharedClasses
                 storeCommand.Parameters.AddWithValue("@Feature", productInfo.Feature);
                 storeCommand.Parameters.AddWithValue("@FeatureDescription", productInfo.FeatureDescription);
                 storeCommand.Parameters.AddWithValue("@FeatureType", productInfo.FeatureType);
-
+                */
                 storeCommand.ExecuteNonQuery();
 
                 connection.Close();

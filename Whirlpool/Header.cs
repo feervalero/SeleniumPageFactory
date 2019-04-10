@@ -15,12 +15,13 @@ namespace Whirlpool
     {
         public static void SearchItem(string item)
         {
+            Thread.Sleep(TimeSpan.FromSeconds(10));
             IWebElement input_search_form = Driver.Instance.FindElement(By.Id("search"));
             input_search_form.Clear();
             input_search_form.SendKeys(item);
             input_search_form.SendKeys(Keys.Enter);
             Thread.Sleep(TimeSpan.FromSeconds(10));
-           
+
 
         }
 

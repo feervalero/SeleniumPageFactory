@@ -16,7 +16,7 @@ namespace Whirlpool
 {
     public class PDP
     {
-        public static bool HasPrice()
+        /*public static bool HasPrice()
         {
             Thread.Sleep(TimeSpan.FromSeconds(2));
             try
@@ -45,6 +45,8 @@ namespace Whirlpool
                 return false;
             }
         }
+        */
+
 
         public static void getDocuments(string item)
         {
@@ -57,7 +59,7 @@ namespace Whirlpool
                 DataBase.AddManual(item,a_text,a_href,"1");
 
                 ProductDetailPage pdp = new ProductDetailPage();
-                pdp.Date = "010119";
+                pdp.Date = DataBase.GetDateFormatDB();
                 pdp.ProductoId = item;
                 pdp.URL = Driver.Instance.Url;
 
@@ -65,7 +67,7 @@ namespace Whirlpool
 
                 ProductDetail2 pd = new ProductDetail2();
                 pd.DetailTypeId = DataBase.GetDetailTypeId("Manual");
-                pd.Date = "010219";
+                pd.Date = DataBase.GetDateFormatDB();
                 pd.Value = a_href;
                 pd.ProductDetailPageId = PDPId;
 
@@ -82,12 +84,25 @@ namespace Whirlpool
 
         public static void getInfoFromPDP(string item)
         {
-            ProductDetail product = new ProductDetail();
+            ProductDetailPage pdp = new ProductDetailPage();
+            pdp.Date = DataBase.GetDateFormatDB();
+            pdp.ProductoId = item;
+            pdp.URL = Driver.Instance.Url;
 
-            product.SKU = item;
-            product.Description = Driver.Instance.FindElement(By.ClassName("the-product-title")).Text;
-            product.BrandCode = "WHR";
-            product.Price = "";
+            var PDPId = DataBase.AddPDP(pdp);
+            var Date = DataBase.GetDateFormatDB();
+
+
+            ProductDetail2 pd = new ProductDetail2();
+
+            pd.DetailTypeId = DataBase.GetDetailTypeId("Title");
+            pd.Date = Date;
+            pd.ProductDetailPageId = PDPId;
+            pd.Value = Driver.Instance.FindElement(By.ClassName("the-product-title")).Text;
+
+            DataBase.AddProductDetail(pd);
+            
+
 
             try
             {
@@ -95,11 +110,7 @@ namespace Whirlpool
                 IList<IWebElement> mainFeatures = mainFeatureElement.FindElements(By.ClassName("show-more-container"));
                 if (mainFeatures.Count == 0)
                 {
-                    product.Feature = "no main feature";
-                    product.FeatureDescription = "no main feature";
-                    product.FeatureType = "main";
-                    product.MaterialFeature = item + "-m-0";
-                    DataBase.ExecuteProcedure(product);
+                   
                 }
                 else
                 {
@@ -108,11 +119,17 @@ namespace Whirlpool
                     {
                         IWebElement mainFeatureTitle = mainFeature.FindElement(By.TagName("h4"));
                         IWebElement mainFeatureDescription = mainFeature.FindElement(By.ClassName("additional-content"));
-                        product.MaterialFeature = item + "-m-" + iy;
-                        product.Feature = mainFeatureTitle.Text;
-                        product.FeatureDescription = mainFeatureDescription.Text;
-                        product.FeatureType = "main";
-                        DataBase.ExecuteProcedure(product);
+
+                        pd.DetailTypeId = DataBase.GetDetailTypeId("MainFeatureDescription");
+                        pd.Value = mainFeatureDescription.Text;
+
+                        DataBase.AddProductDetail(pd);
+
+                        pd.DetailTypeId = DataBase.GetDetailTypeId("MainFeatureTitle");
+                        pd.Value = mainFeatureTitle.Text;
+
+                        DataBase.AddProductDetail(pd);
+
                         iy++;
                     }
                 }
@@ -121,11 +138,7 @@ namespace Whirlpool
             }
             catch (NoSuchElementException e)
             {
-                product.Feature = "no main feature";
-                product.FeatureDescription = "no main feature";
-                product.FeatureType = "main";
-                product.MaterialFeature = item + "-m-0";
-                DataBase.ExecuteProcedure(product);
+                
             }
 
 
@@ -139,11 +152,7 @@ namespace Whirlpool
 
                 if (additionalFeatures.Count == 0)
                 {
-                    product.Feature = "no additional feature";
-                    product.FeatureDescription = "no additional feature";
-                    product.FeatureType = "other";
-                    product.MaterialFeature = item + "-o-0";
-                    DataBase.ExecuteProcedure(product); 
+                    
                     
                 }
                 else
@@ -153,11 +162,17 @@ namespace Whirlpool
                     {
                         IWebElement additionalFeatureTitle = additionalFeature.FindElement(By.TagName("h5"));
                         IWebElement additionalFeatureDescription = additionalFeature.FindElement(By.TagName("p"));
-                        product.MaterialFeature = item + "-o-" + iy;
-                        product.Feature = additionalFeatureTitle.Text;
-                        product.FeatureDescription = additionalFeatureDescription.Text;
-                        product.FeatureType = "other";
-                        DataBase.ExecuteProcedure(product);
+
+                        pd.DetailTypeId = DataBase.GetDetailTypeId("AdditionalFeatureDescription");
+                        pd.Value = additionalFeatureDescription.Text;
+
+                        DataBase.AddProductDetail(pd);
+
+                        pd.DetailTypeId = DataBase.GetDetailTypeId("AdditionalFeatureTitle");
+                        pd.Value = additionalFeatureTitle.Text;
+
+                        DataBase.AddProductDetail(pd);
+
                         iy++;
                     }
                 }
@@ -167,11 +182,7 @@ namespace Whirlpool
             }
             catch (NoSuchElementException e)
             {
-                product.Feature = "no additional feature";
-                product.FeatureDescription = "no additional feature";
-                product.FeatureType = "other";
-                product.MaterialFeature = item + "-o-0";
-                DataBase.ExecuteProcedure(product);
+                
             }
 
             try
@@ -181,35 +192,9 @@ namespace Whirlpool
                 {
                     
 
-                    //width: 56px; height: 56px; background-image: url("https://kitchenaid-h.assetsadobe.com/is/image/content/dam/business-unit/whirlpool/es-mx/assets/product/kitchen/refrigeration/top-mount/wt1865a/WT1865A%2000.jpg?fit=constrain,1&wid=56&hei=56&fmt=jpg");
+                    
                     string a = imageElement.Text;
                     a = a + "";
-                    //var style = imageElement.GetCssValue("backgroundImage");
-                    
-                    //if (style != "none")
-                    //{
-                    //    var http = style.IndexOf("http");
-
-                    //    var url = style.Substring(http, style.Length - 7);
-
-
-                    //    HttpWebRequest webRequest = (HttpWebRequest)WebRequest.Create(url);
-                    //    webRequest.AllowAutoRedirect = false;
-                    //    HttpWebResponse response = (HttpWebResponse)webRequest.GetResponse();
-                    //    var code = response.StatusCode.ToString();
-
-
-                    //    int active = (code == "OK") ? 1 : 0;
-
-                    //    DataBase.InsertImage(item, url, active);
-                    //}
-                    //else
-                    //{
-
-                    //    DataBase.InsertImage(item,"no url",0);
-                    //}
-
-
 
 
 
